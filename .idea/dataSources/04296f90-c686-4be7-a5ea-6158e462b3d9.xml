@@ -12,8 +12,8 @@
     </database>
     <schema id="4" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-10-09.05:40:11.949</IntrospectionTimestamp>
-      <IntrospectionStateNumber>648</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-10-09.10:40:51.264</IntrospectionTimestamp>
+      <IntrospectionStateNumber>655</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -64,7 +64,7 @@
     </sequence>
     <sequence id="15" parent="4" name="User_id_seq">
       <ObjectId>16402</ObjectId>
-      <StateNumber>635</StateNumber>
+      <StateNumber>655</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
@@ -86,7 +86,7 @@
     </table>
     <table id="20" parent="4" name="User">
       <ObjectId>16404</ObjectId>
-      <StateNumber>646</StateNumber>
+      <StateNumber>655</StateNumber>
     </table>
     <table id="21" parent="4" name="User_Score">
       <ObjectId>16453</ObjectId>

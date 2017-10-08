@@ -12,6 +12,7 @@ public class RecordsEntity {
     private Timestamp finishTime;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public long getId() {
         return id;

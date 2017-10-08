@@ -17,6 +17,7 @@ public class BpMeasuresEntity {
     private Short mood;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public long getId() {
         return id;

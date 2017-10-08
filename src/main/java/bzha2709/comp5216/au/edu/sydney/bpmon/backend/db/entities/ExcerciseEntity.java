@@ -12,6 +12,7 @@ public class ExcerciseEntity {
     private Timestamp time;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public long getId() {
         return id;

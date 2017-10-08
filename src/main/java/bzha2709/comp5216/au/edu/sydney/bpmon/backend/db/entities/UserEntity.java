@@ -3,7 +3,7 @@ package bzha2709.comp5216.au.edu.sydney.bpmon.backend.db.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User", schema = "public", catalog = "bpmonitor")
+@Table(name = "\"User\"", schema = "public", catalog = "bpmonitor")
 public class UserEntity {
     private int id;
     private String email;
@@ -17,6 +17,7 @@ public class UserEntity {
     private String auth;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
