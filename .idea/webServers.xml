@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e5f852c4-03ce-4dd8-bb58-fb6d457afe19" name="BPMon_back_end" url="https://betty35@bitbucket.org/betty35/bpmonitor_back_end.git">
+        <fileTransfer host="https://betty35@bitbucket.org/betty35/bpmonitor_back_end.git" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
