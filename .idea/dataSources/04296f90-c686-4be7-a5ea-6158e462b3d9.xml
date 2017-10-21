@@ -12,8 +12,8 @@
     </database>
     <schema id="4" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-10-09.10:40:51.264</IntrospectionTimestamp>
-      <IntrospectionStateNumber>655</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-10-21.21:42:50.159</IntrospectionTimestamp>
+      <IntrospectionStateNumber>691</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -64,33 +64,33 @@
     </sequence>
     <sequence id="15" parent="4" name="User_id_seq">
       <ObjectId>16402</ObjectId>
-      <StateNumber>655</StateNumber>
+      <StateNumber>686</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="16" parent="4" name="BP_Measures">
       <ObjectId>16428</ObjectId>
-      <StateNumber>637</StateNumber>
+      <StateNumber>668</StateNumber>
     </table>
     <table id="17" parent="4" name="Challenge">
       <ObjectId>16415</ObjectId>
-      <StateNumber>636</StateNumber>
+      <StateNumber>669</StateNumber>
     </table>
     <table id="18" parent="4" name="Excercise">
       <ObjectId>16445</ObjectId>
-      <StateNumber>639</StateNumber>
+      <StateNumber>670</StateNumber>
     </table>
     <table id="19" parent="4" name="Records">
       <ObjectId>16437</ObjectId>
-      <StateNumber>638</StateNumber>
+      <StateNumber>672</StateNumber>
     </table>
     <table id="20" parent="4" name="User">
       <ObjectId>16404</ObjectId>
-      <StateNumber>655</StateNumber>
+      <StateNumber>686</StateNumber>
     </table>
     <table id="21" parent="4" name="User_Score">
       <ObjectId>16453</ObjectId>
-      <StateNumber>640</StateNumber>
+      <StateNumber>673</StateNumber>
     </table>
     <column id="22" parent="16" name="id">
       <Position>1</Position>
@@ -102,8 +102,8 @@
     </column>
     <column id="23" parent="16" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>643</StateNumber>
+      <DataType>bigint|0</DataType>
+      <StateNumber>668</StateNumber>
     </column>
     <column id="24" parent="16" name="time">
       <Position>3</Position>
@@ -153,9 +153,9 @@
     </key>
     <column id="33" parent="17" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>636</StateNumber>
+      <StateNumber>669</StateNumber>
       <SequenceName>Challenge_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;Challenge_id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
@@ -180,12 +180,12 @@
       <StateNumber>636</StateNumber>
     </column>
     <index id="38" parent="17" name="Challenge_pkey">
-      <ObjectId>16422</ObjectId>
+      <ObjectId>16503</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="39" parent="17" name="Challenge_pkey">
-      <ObjectId>16423</ObjectId>
+      <ObjectId>16504</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>Challenge_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -200,8 +200,8 @@
     </column>
     <column id="41" parent="18" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>639</StateNumber>
+      <DataType>bigint|0</DataType>
+      <StateNumber>670</StateNumber>
     </column>
     <column id="42" parent="18" name="steps">
       <Position>3</Position>
@@ -234,13 +234,13 @@
     </column>
     <column id="47" parent="19" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>638</StateNumber>
+      <DataType>bigint|0</DataType>
+      <StateNumber>671</StateNumber>
     </column>
     <column id="48" parent="19" name="challenge_id">
       <Position>3</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>638</StateNumber>
+      <DataType>bigint|0</DataType>
+      <StateNumber>672</StateNumber>
     </column>
     <column id="49" parent="19" name="finish_time">
       <Position>4</Position>
@@ -260,9 +260,9 @@
     </key>
     <column id="52" parent="20" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>635</StateNumber>
+      <StateNumber>666</StateNumber>
       <SequenceName>User_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;User_id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
@@ -312,28 +312,43 @@
       <NotNull>1</NotNull>
       <StateNumber>647</StateNumber>
     </column>
-    <index id="62" parent="20" name="User_pkey">
-      <ObjectId>16411</ObjectId>
+    <column id="62" parent="20" name="starttime">
+      <Position>11</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>691</StateNumber>
+    </column>
+    <column id="63" parent="20" name="endtime">
+      <Position>12</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>690</StateNumber>
+    </column>
+    <column id="64" parent="20" name="lastupdate">
+      <Position>13</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>680</StateNumber>
+    </column>
+    <index id="65" parent="20" name="User_pkey">
+      <ObjectId>16488</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="63" parent="20" name="accountID">
+    <index id="66" parent="20" name="accountID">
       <ObjectId>16467</ObjectId>
       <ColNames>auth</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="64" parent="20" name="User_pkey">
-      <ObjectId>16412</ObjectId>
+    <key id="67" parent="20" name="User_pkey">
+      <ObjectId>16489</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>User_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="65" parent="20" name="accountID">
+    <key id="68" parent="20" name="accountID">
       <ObjectId>16468</ObjectId>
       <ColNames>auth</ColNames>
       <UnderlyingIndexName>accountID</UnderlyingIndexName>
     </key>
-    <column id="66" parent="21" name="id">
+    <column id="69" parent="21" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -341,27 +356,27 @@
       <SequenceName>User_Score_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;User_Score_id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="67" parent="21" name="user_id">
+    <column id="70" parent="21" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>640</StateNumber>
+      <DataType>bigint|0</DataType>
+      <StateNumber>673</StateNumber>
     </column>
-    <column id="68" parent="21" name="score">
+    <column id="71" parent="21" name="score">
       <Position>3</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>640</StateNumber>
     </column>
-    <column id="69" parent="21" name="time">
+    <column id="72" parent="21" name="time">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>640</StateNumber>
     </column>
-    <index id="70" parent="21" name="User_Score_pkey">
+    <index id="73" parent="21" name="User_Score_pkey">
       <ObjectId>16457</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="71" parent="21" name="User_Score_pkey">
+    <key id="74" parent="21" name="User_Score_pkey">
       <ObjectId>16458</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>User_Score_pkey</UnderlyingIndexName>

@@ -7,12 +7,11 @@ import java.sql.Timestamp;
 @Table(name = "User_Score", schema = "public", catalog = "bpmonitor")
 public class UserScoreEntity {
     private long id;
-    private Integer userId;
+    private Long userId;
     private Double score;
     private Timestamp time;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public long getId() {
         return id;
@@ -24,11 +23,11 @@ public class UserScoreEntity {
 
     @Basic
     @Column(name = "user_id")
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

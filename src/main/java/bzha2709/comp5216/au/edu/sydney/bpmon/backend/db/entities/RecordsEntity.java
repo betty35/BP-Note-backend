@@ -7,12 +7,11 @@ import java.sql.Timestamp;
 @Table(name = "Records", schema = "public", catalog = "bpmonitor")
 public class RecordsEntity {
     private long id;
-    private Integer userId;
-    private Integer challengeId;
+    private Long userId;
+    private Long challengeId;
     private Timestamp finishTime;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public long getId() {
         return id;
@@ -24,21 +23,21 @@ public class RecordsEntity {
 
     @Basic
     @Column(name = "user_id")
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
     @Basic
     @Column(name = "challenge_id")
-    public Integer getChallengeId() {
+    public Long getChallengeId() {
         return challengeId;
     }
 
-    public void setChallengeId(Integer challengeId) {
+    public void setChallengeId(Long challengeId) {
         this.challengeId = challengeId;
     }
 

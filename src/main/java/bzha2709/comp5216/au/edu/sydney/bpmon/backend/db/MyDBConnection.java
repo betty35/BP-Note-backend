@@ -28,5 +28,4 @@ public class MyDBConnection {
     public static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
     }
-    
 }

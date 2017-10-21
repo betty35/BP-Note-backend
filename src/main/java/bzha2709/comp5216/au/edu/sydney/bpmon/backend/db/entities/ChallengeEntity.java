@@ -5,20 +5,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Challenge", schema = "public", catalog = "bpmonitor")
 public class ChallengeEntity {
-    private int id;
+    private long id;
     private String name;
     private String description;
     private String imgPath;
     private Boolean traceable;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -78,7 +77,7 @@ public class ChallengeEntity {
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (imgPath != null ? imgPath.hashCode() : 0);

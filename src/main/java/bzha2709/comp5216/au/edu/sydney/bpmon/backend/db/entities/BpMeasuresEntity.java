@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 @Table(name = "BP_Measures", schema = "public", catalog = "bpmonitor")
 public class BpMeasuresEntity {
     private long id;
-    private Integer userId;
+    private Long userId;
     private Timestamp time;
     private Short sys;
     private Short dia;
@@ -17,8 +17,8 @@ public class BpMeasuresEntity {
     private Short mood;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -29,11 +29,11 @@ public class BpMeasuresEntity {
 
     @Basic
     @Column(name = "user_id")
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
