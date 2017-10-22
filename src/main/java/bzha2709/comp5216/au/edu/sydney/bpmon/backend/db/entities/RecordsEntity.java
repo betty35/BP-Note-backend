@@ -1,7 +1,6 @@
 package bzha2709.comp5216.au.edu.sydney.bpmon.backend.db.entities;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Records", schema = "public", catalog = "bpmonitor")
@@ -9,7 +8,7 @@ public class RecordsEntity {
     private long id;
     private Long userId;
     private Long challengeId;
-    private Timestamp finishTime;
+    private Long finishTime;
 
     @Id
     @Column(name = "id")
@@ -43,11 +42,11 @@ public class RecordsEntity {
 
     @Basic
     @Column(name = "finish_time")
-    public Timestamp getFinishTime() {
+    public Long getFinishTime() {
         return finishTime;
     }
 
-    public void setFinishTime(Timestamp finishTime) {
+    public void setFinishTime(Long finishTime) {
         this.finishTime = finishTime;
     }
 

@@ -1,20 +1,19 @@
 package bzha2709.comp5216.au.edu.sydney.bpmon.backend.db.entities;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "BP_Measures", schema = "public", catalog = "bpmonitor")
+@Table(name = "\"BP_Measures\"", schema = "public", catalog = "bpmonitor")
 public class BpMeasuresEntity {
     private long id;
     private Long userId;
-    private Timestamp time;
     private Short sys;
     private Short dia;
     private Short pulse;
     private Short position;
     private Short arm;
     private Short mood;
+    private Long time;
 
     @Id
     @Column(name = "id")
@@ -35,16 +34,6 @@ public class BpMeasuresEntity {
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    @Basic
-    @Column(name = "time")
-    public Timestamp getTime() {
-        return time;
-    }
-
-    public void setTime(Timestamp time) {
-        this.time = time;
     }
 
     @Basic
@@ -107,6 +96,16 @@ public class BpMeasuresEntity {
         this.mood = mood;
     }
 
+    @Basic
+    @Column(name = "time")
+    public Long getTime() {
+        return time;
+    }
+
+    public void setTime(Long time) {
+        this.time = time;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,26 +115,26 @@ public class BpMeasuresEntity {
 
         if (id != that.id) return false;
         if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
-        if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (sys != null ? !sys.equals(that.sys) : that.sys != null) return false;
         if (dia != null ? !dia.equals(that.dia) : that.dia != null) return false;
         if (pulse != null ? !pulse.equals(that.pulse) : that.pulse != null) return false;
         if (position != null ? !position.equals(that.position) : that.position != null) return false;
         if (arm != null ? !arm.equals(that.arm) : that.arm != null) return false;
-        return mood != null ? mood.equals(that.mood) : that.mood == null;
+        if (mood != null ? !mood.equals(that.mood) : that.mood != null) return false;
+        return time != null ? time.equals(that.time) : that.time == null;
     }
 
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
-        result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + (sys != null ? sys.hashCode() : 0);
         result = 31 * result + (dia != null ? dia.hashCode() : 0);
         result = 31 * result + (pulse != null ? pulse.hashCode() : 0);
         result = 31 * result + (position != null ? position.hashCode() : 0);
         result = 31 * result + (arm != null ? arm.hashCode() : 0);
         result = 31 * result + (mood != null ? mood.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
 }

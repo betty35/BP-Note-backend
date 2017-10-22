@@ -14,7 +14,8 @@ public class UserController {
     @RequestMapping(value="/",method = RequestMethod.GET)
     @ResponseBody
     public String welcome(){
-        return "Welcome";
+        Session s= MyDBConnection.getSession();
+        return "Welcome to SpringMVC";
     }
 
 
@@ -27,24 +28,26 @@ public class UserController {
 
     @RequestMapping(value="/user/register",method = RequestMethod.GET)
     @ResponseBody
-    public String initialRegister(@RequestParam String auth)
+    public UserEntity initialRegister(@RequestParam String auth)
     {
         UserEntity u=new UserEntity();
         u.setAuth(auth);
         Session s= MyDBConnection.getSession();
         try
         {
-            Transaction tx=s.beginTransaction();
             Query q =s.createQuery("from UserEntity where auth=:auth").setParameter("auth", auth);
             if(q.getResultList().size()==0)
-            s.save(u);
-            tx.commit();
+            {   Transaction tx=s.beginTransaction();
+                s.save(u);
+                tx.commit();
+            }
+            else u=(UserEntity) q.uniqueResult();
         }
         catch(Exception e){e.printStackTrace();}
         finally {
             s.close();
         }
-        return u.getId()+"";
+        return u;
     }
 
 
@@ -58,7 +61,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value="/user/update",method = RequestMethod.GET)
+    @RequestMapping(value="/user/update",method = RequestMethod.POST)
     @ResponseBody
     public UserEntity updateUserInfo(@RequestBody UserEntity u)
     {

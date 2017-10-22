@@ -1,25 +1,23 @@
 package bzha2709.comp5216.au.edu.sydney.bpmon.backend.db.entities;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "\"User\"", schema = "public", catalog = "bpmonitor")
 public class UserEntity {
-
     private long id;
     private String email;
     private String nickname;
     private Short gender;
     private Short yearOfBirth;
     private String area;
-    private String password;
+    private String psd;
     private String memo;
     private String phone;
     private String auth;
-    private Timestamp starttime;
-    private Timestamp endtime;
-    private Timestamp lastupdate;
+    private Long starttime;
+    private Long endtime;
+    private Long lastupdate;
 
     @Id
     @Column(name = "id")
@@ -83,13 +81,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "password")
-    public String getPassword() {
-        return password;
+    @Column(name = "psd")
+    public String getPsd() {
+        return psd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPsd(String psd) {
+        this.psd = psd;
     }
 
     @Basic
@@ -124,31 +122,31 @@ public class UserEntity {
 
     @Basic
     @Column(name = "starttime")
-    public Timestamp getStarttime() {
+    public Long getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(Timestamp starttime) {
+    public void setStarttime(Long starttime) {
         this.starttime = starttime;
     }
 
     @Basic
     @Column(name = "endtime")
-    public Timestamp getEndtime() {
+    public Long getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Timestamp endtime) {
+    public void setEndtime(Long endtime) {
         this.endtime = endtime;
     }
 
     @Basic
     @Column(name = "lastupdate")
-    public Timestamp getLastupdate() {
+    public Long getLastupdate() {
         return lastupdate;
     }
 
-    public void setLastupdate(Timestamp lastupdate) {
+    public void setLastupdate(Long lastupdate) {
         this.lastupdate = lastupdate;
     }
 
@@ -165,7 +163,7 @@ public class UserEntity {
         if (gender != null ? !gender.equals(that.gender) : that.gender != null) return false;
         if (yearOfBirth != null ? !yearOfBirth.equals(that.yearOfBirth) : that.yearOfBirth != null) return false;
         if (area != null ? !area.equals(that.area) : that.area != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (psd != null ? !psd.equals(that.psd) : that.psd != null) return false;
         if (memo != null ? !memo.equals(that.memo) : that.memo != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
         if (auth != null ? !auth.equals(that.auth) : that.auth != null) return false;
@@ -182,7 +180,7 @@ public class UserEntity {
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         result = 31 * result + (yearOfBirth != null ? yearOfBirth.hashCode() : 0);
         result = 31 * result + (area != null ? area.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (psd != null ? psd.hashCode() : 0);
         result = 31 * result + (memo != null ? memo.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (auth != null ? auth.hashCode() : 0);

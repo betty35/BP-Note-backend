@@ -1,18 +1,18 @@
 package bzha2709.comp5216.au.edu.sydney.bpmon.backend.db.entities;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "User_Score", schema = "public", catalog = "bpmonitor")
+@Table(name = "\"User_Score\"", schema = "public", catalog = "bpmonitor")
 public class UserScoreEntity {
     private long id;
     private Long userId;
     private Double score;
-    private Timestamp time;
+    private Long time;
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -43,11 +43,11 @@ public class UserScoreEntity {
 
     @Basic
     @Column(name = "time")
-    public Timestamp getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 
