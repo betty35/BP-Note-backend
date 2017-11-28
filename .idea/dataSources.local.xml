@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="bpmonitor@52.183.119.175" uuid="04296f90-c686-4be7-a5ea-6158e462b3d9">
+      <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>bpmonitor:public</introspection-schemas>
+    </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="8e152434-e396-47ef-aeeb-b9e9b5ea855d">
+      <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>bpmonitor:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
